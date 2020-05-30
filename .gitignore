@@ -1,4 +1,5 @@
 # Class files
+/config.py 
 /Module_9_Lessons
 # Byte-compiled / optimized / DLL files
 __pycache__/
