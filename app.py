@@ -20,15 +20,15 @@ app = Flask (__name__)
 # Adding welcome route:
 @app.route('/')
 def welcome():
-    return('''
-    Welcome to the Climate Analysis API!<br>
-    <br>
-    Available Routes:<br>
-    /api/v1.0/precipitation<br>
-    /api/v1.0/stations<br>
-    /api/v1.0/tobs<br>
-    /api/v1.0/temp/start/end
-    ''')
+    return(
+    f"Welcome to the Climate Analysis API!<br/>"
+    f"<br>"
+    f"Available Routes:<br/>"
+    f"<a href='/api/v1.0/precipitation'>/api/v1.0/precipitation<br/a>"
+    f"<a href='/api/v1.0/stations'>/api/v1.0/stations<br/a>"
+    f"<a href='/api/v1.0/tobs'>/api/v1.0/tobs<br/a>"
+    f"<a href='/api/v1.0/temp/start/end'>/api/v1.0/temp/start/end</a"
+    )
 
 # Adding precipitation route
 # Use '127.0.0.1:5000/api/v1.0/precipitation' to view data:
@@ -62,12 +62,21 @@ filter(Measurement.date >= prev_year).all()
 @app.route('/api/v1.0/temp/<start>')
 @app.route('/api/v1.0/temp/<start>/<end>')
 def api(start=None, end=None):
+    
     sel = [func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)]
-#'if not end:' code referenced in module commented out
+    
+    if not end: # code referenced in module commented out
+        results = session.query(*sel).\
+            filter(Measurement.date >= start).all()
+        temps = list(np.ravel(results))
+        return jsonify(temps)
+
     results = session.query(*sel).\
-filter(Measurement.date >= start).\
-filter(Measurement.date <= end).all()
+        filter(Measurement.date >= start).\
+        filter(Measurement.date <= end).all()
+ 
     temps = list(np.ravel(results))
     return jsonify(temps)
+
 if __name__ == '__main__':
     app.run()
