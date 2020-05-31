@@ -10,9 +10,9 @@ Temperature data was received from 9 different weather stations on the island of
 
 
 **Notable temperature differences between the months of June & December across all years of data:**
-1.  The temperatures in June have a much lower standard deviation with just 2 outlier recordings, meaning the temperature will be much more consistent in the summer
-2.  The temperatures in December have a mean that is 5 degrees cooler plus a higher standard deviation plus many outliers, meaning the temperature will be harder to predict in the winter
-3.  There are temperatures in December that may be too cool for surfing
+1.  The temperatures in June have a much lower standard deviation with just 5 outlier recordings, meaning the temperature will be much more consistent in the summer
+2.  The temperatures in December have a mean that is 5 degrees cooler plus a higher standard deviation plus twice as many outliers on the cooler side, meaning the temperature will be harder to predict in the winter
+3.  There are minimum temperatures in December that may be too cool for surfing
 
 Link to code file:  [Surf's Up Challenge](https://github.com/mydogmandy/009_Surfs_Up/blob/master/Surfs_Up_Challenge.ipynb)
 
