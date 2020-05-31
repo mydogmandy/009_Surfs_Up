@@ -14,7 +14,7 @@ Temperature data was received from 9 different weather stations on the island of
 2.  The temperatures in December have a mean that is 5 degrees cooler plus a higher standard deviation plus many outliers, meaning the temperature will be harder to predict in the winter
 3.  There are temperatures in December that may be too cool for surfing
 
-Link to code file:  [Surf's Up Challenge]()
+Link to code file:  [Surf's Up Challenge](https://github.com/mydogmandy/009_Surfs_Up/blob/master/Surfs_Up_Challenge.ipynb)
 
 ### ***Recommendations for Further Analysis:***
 
